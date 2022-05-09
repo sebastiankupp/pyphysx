@@ -147,6 +147,11 @@ PYBIND11_MODULE(pyphysx, m) {
             )
             .def("get_aggregates", &Scene::get_aggregates)
             .def_readwrite("simulation_time", &Scene::simulation_time);
+			.def("set_gravity", &Scene::setGravity,
+                 arg("x")
+                 arg("y")
+                 arg("z")
+            )
 
     py::class_<Aggregate>(m, "Aggregate")
             .def(py::init<size_t, bool>(),

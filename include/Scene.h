@@ -81,6 +81,10 @@ public:
         get_physx_ptr()->getAggregates(&aggs[0], n);
         return from_vector_of_physx_ptr<Aggregate>(aggs);
     }
+	
+	void set_gravity(float x, float y, float z){
+		get_physx_ptr()->setGravity(physx::PxVec3(x, y, z));
+	}
 
 public:
     double simulation_time = 0.;
